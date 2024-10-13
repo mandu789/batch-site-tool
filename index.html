@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>批量site网址打开工具-批量打开网址工具</title>
+    <link rel="stylesheet" href="styles.css"> <!-- 引用外部CSS -->
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="logo.png" alt="网站Logo">
+        </div>
+        <h2>批量打开site网址工具</h2>
+
+        <!-- 导航栏 -->
+        <div class="navbar">
+            <a href="#home">首页</a>
+            <a href="#tools">工具</a>
+            <a href="#about">关于</a>
+            <a href="#contact">联系我们</a>
+        </div>
+
+        <label for="maxWindows">同时打开的最大窗口数量（默认10）：</label>
+        <input type="number" id="maxWindows" value="10" min="1"><br><br>
+
+        <div id="controls">
+            <textarea id="domains" rows="10" cols="50" placeholder="请输入域名，每行一个"></textarea>
+            <div id="searchEngines">
+                <label><input type="radio" name="engine" value="baidu" checked> 百度</label>
+                <label><input type="radio" name="engine" value="m_baidu"> 移动百度</label>
+                <label><input type="radio" name="engine" value="sogou"> 搜狗</label>
+                <label><input type="radio" name="engine" value="so"> 360搜索</label>
+                <label><input type="radio" name="engine" value="shenma"> 神马搜索</label>
+                <label><input type="radio" name="engine" value="google"> 谷歌</label>
+                <label><input type="radio" name="engine" value="wayback"> 时光机</label>
+
+                <label><input type="radio" name="engine" value="direct"> 直接打开域名</label>
+            </div>
+        </div>
+
+        <div id="actions">
+            <button onclick="startBatchOpening()">执行</button>
+            <button onclick="stopBatchOpening()">终止任务</button>
+            <button onclick="clearDomains()">清除内容</button>
+			<button onclick="copyDomainsToClipboard()">复制未关闭窗口的域名</button>
+        </div>
+
+        <div id="status">状态：等待开始</div>
+    </div>
+
+    <footer>
+        &copy; 2024 批量打开site网址工具. 保留所有权利 | <a href="#">备案号：</a>
+    </footer>
+
+    <script src="scripts.js"></script> <!-- 引用外部JS -->
+</body>
+</html>
